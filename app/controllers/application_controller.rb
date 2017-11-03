@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  post '/login' do    
+  post '/login' do
     #binding.pry
     if User.exists?(username: params[:username])
       user = User.find_by(username: params[:username])
