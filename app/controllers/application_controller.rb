@@ -15,7 +15,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-
+    @user = User.find_by(username: params[:username], password: params[:password])
+    session[:id] = @user.id
   end
 
   get '/logout' do
